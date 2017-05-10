@@ -1,4 +1,4 @@
-class PatientsController < ApplicationController
+class PatientsController < ProtectedController
   before_action :set_patient, only: [:show, :update, :destroy]
 
   # GET /patients
@@ -15,7 +15,7 @@ class PatientsController < ApplicationController
 
   # POST /patients
   def create
-    @patient = Patient.new(patient_params)
+    @patient = current_user.patients.build(patient_params)
 
     if @patient.save
       render json: @patient, status: :created, location: @patient
@@ -41,7 +41,7 @@ class PatientsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_patient
-      @patient = Patient.find(params[:id])
+      @patient = current_user.patients.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

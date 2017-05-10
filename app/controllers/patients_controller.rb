@@ -3,7 +3,7 @@ class PatientsController < ProtectedController
 
   # GET /patients
   def index
-    @patients = Patient.all
+    @patients = current_user.patients
 
     render json: @patients
   end

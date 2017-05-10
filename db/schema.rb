@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20170510220255) do
     t.string   "first_name", null: false
     t.string   "last_name",  null: false
     t.string   "specialty",  null: false
+    t.bigint   "phone",      null: false
+    t.string   "location",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"

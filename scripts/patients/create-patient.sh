@@ -9,8 +9,8 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "patient": {
-      "first_name": "Zhu",
-      "last_name": "Chen",
+      "first_name": "Wei",
+      "last_name": "Liu",
       "height": 178,
       "weight": 180,
       "prescription": "high blood pressure pills",

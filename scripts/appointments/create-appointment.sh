@@ -9,7 +9,7 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "appointment": {
-      "date_on": "11/1/17",
+      "date_on": "11/1/17 10am",
       "location": "Boston,MA Tuft Hospital 7th Floor Rm705",
       "doctor_id": 1,
       "patient_id": 1

@@ -46,6 +46,6 @@ class PrescriptionsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def prescription_params
-      params.require(:prescription).permit(:pharmacy_location,:usage_direction,:duration,:patient_id,:drug_id)
+      params.require(:prescription).permit(:pharmacy_location,:usage_direction,:duration,:patient_id,:drug_id,:doctor_id)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518154425) do
+ActiveRecord::Schema.define(version: 20170518160749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,12 +64,21 @@ ActiveRecord::Schema.define(version: 20170518154425) do
     t.string   "last_name",      null: false
     t.integer  "height",         null: false
     t.integer  "weight",         null: false
-    t.string   "prescription"
     t.bigint   "phone",          null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"
     t.index ["user_id"], name: "index_patients_on_user_id", using: :btree
+  end
+
+  create_table "prescriptions", force: :cascade do |t|
+    t.string   "pharmacy_location", null: false
+    t.string   "usage_direction",   null: false
+    t.string   "duration",          null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_prescriptions_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,4 +98,5 @@ ActiveRecord::Schema.define(version: 20170518154425) do
   add_foreign_key "drugs", "users"
   add_foreign_key "examples", "users"
   add_foreign_key "patients", "users"
+  add_foreign_key "prescriptions", "users"
 end

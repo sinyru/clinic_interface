@@ -13,7 +13,6 @@ curl "${API}${URL_PATH}" \
       "last_name": "Liu",
       "height": 178,
       "weight": 180,
-      "prescription": "high blood pressure pills",
       "phone": 8573830565
     }
   }'

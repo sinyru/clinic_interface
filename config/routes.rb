@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :patients, except: [:new, :edit]
   resources :doctors, except: [:new, :edit]
   resources :appointments, except: [:new, :edit]
+  resources :drugs, except: [:new, :edit]
 end

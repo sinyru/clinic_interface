@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170518164856) do
     t.integer  "height",         null: false
     t.integer  "weight",         null: false
     t.bigint   "phone",          null: false
+    t.integer  "age",            null: false
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "user_id"

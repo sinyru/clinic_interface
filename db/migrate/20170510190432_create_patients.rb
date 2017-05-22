@@ -7,6 +7,7 @@ class CreatePatients < ActiveRecord::Migration[5.0]
       t.integer :height, null: false
       t.integer :weight, null: false
       t.integer :phone, null: false, limit: 8
+      t.integer :age, null: false
       t.timestamps
     end
   end

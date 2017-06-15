@@ -18,7 +18,7 @@ class PatientsController < ProtectedController
     @patient = current_user.patients.build(patient_params)
 
     if @patient.save
-      render json: @patient, status: :created, location: @patient
+      render json: @patient, status: :created
     else
       render json: @patient.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class PatientsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def patient_params
-      params.require(:patient).permit(:first_name,:last_name,:height,:weight,:phone,:age)
+      params.require(:patient).permit(:first_name,:last_name,:age,:height,:weight,:phone,:primary_doctor)
     end
 end
